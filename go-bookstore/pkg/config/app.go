@@ -11,7 +11,7 @@ var (
 
 func Connect() {
 	//d, err := gorm.Open("mysql", "ahmed:gomysql@123/bookstore?charset=utf8&parseTime=True&loc=Local")
-	d, err := gorm.Open("mysql", "mysql://doadmin:AVNS_PED5LfbsoGZqR9x@bookstore-do-user-8417367-0.b.db.ondigitalocean.com:25060/defaultdb?ssl-mode=REQUIRED")
+	d, err := gorm.Open("mysql", "doadmin:AVNS_PED5LfbsoGZqR9x@tcp(bookstore-do-user-8417367-0.b.db.ondigitalocean.com:25060)/defaultdb?charset=utf8mb")
 	if err != nil {
 		panic(err)
 	}
