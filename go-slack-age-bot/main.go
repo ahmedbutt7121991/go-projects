@@ -22,8 +22,8 @@ func printCommandEvents(analyticsChannel <-chan *slacker.CommandEvent) {
 }
 
 func main() {
-	os.Setenv("SLACK_BOT_TOKEN", "xoxb-3562826309572-3573108994753-OusCuERHAE5m3kHSqu3VSH52")
-	os.Setenv("SLACK_APP_TOKEN", "xapp-1-A03GJQDPQ2Y-3545888513543-7f52156ab5c67cd6a9fe2e9a058306371db209b938f974988c0a285e51869f8b")
+	os.Setenv("SLACK_BOT_TOKEN", "xoxb-3562826309572-3573108994753-3juK46AeqdzO3SlsldK2f3vS")
+	os.Setenv("SLACK_APP_TOKEN", "xapp-1-A03GJQDPQ2Y-3554107046262-6625b4c8b711e2ae20c33702fee9fc901b9c904cc22669df283ff4839b225eb7")
 
 	bot := slacker.NewClient(os.Getenv("SLACK_BOT_TOKEN"), os.Getenv("SLACK_APP_TOKEN"))
 
@@ -39,7 +39,7 @@ func main() {
 				println("error")
 			}
 			age := 2022 - yob
-			r := fmt.Sprint("age is %d", age)
+			r := fmt.Sprintf("age is %d", age)
 			response.Reply(r)
 		},
 	})
