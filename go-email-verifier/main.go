@@ -7,23 +7,22 @@ import (
 	"net"
 	"os"
 	"strings"
-	"text/scanner"
 )
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Printf("domain, hasMX, hasSPF, spfRecord, hasDMARC, dmarcRecord\n")
 
-	for scanner.Scan(){
+	for scanner.Scan() {
 		checkDomain(scanner.Text())
 	}
 
-	if err := scanner.Err(); err!=nil{
+	if err := scanner.Err(); err != nil {
 		log.Fatal("Error: Could not read from input: %v\n", err)
 	}
 }
 
-func checkDomain(domain string){
+func checkDomain(domain string) {
 	var hasMX, hasSPF, hasDMARC bool
 	var spfRecord, dmarcRecord string
 
@@ -39,19 +38,21 @@ func checkDomain(domain string){
 
 	txtRecords, err := net.LookupTXT(domain)
 
-	if err != nil{
+	if err != nil {
 		log.Printf("Error: %v\n", err)
 	}
 
 	for _, record := range txtRecords {
-		if strings.HasPrefix(record, "v=spf1")
-		hasSPF = true
-		spfRecord = record
-		break
+		if strings.HasPrefix(record, "v=spf1") {
+			hasSPF = true
+			spfRecord = record
+			break
+		}
+
 	}
 
 	dmarcRecords, err := net.LookupTXT("_dmarc." + domain)
-	if err != nil{
+	if err != nil {
 		log.Printf("Error: %v\n", err)
 	}
 
