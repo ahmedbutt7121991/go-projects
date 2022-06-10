@@ -9,10 +9,15 @@ import (
 
 func main() {
 
-	os.Setenv("SLACK_BOT_TOKEN", "")
-	os.Setenv("CHANNEL_ID", "")
-	api := slack.New(os.Getenv("SLACK_BOT_TOKEN"))
-	channelArr := []string{os.Getenv("CHANNEL_ID")}
+	//os.Setenv("SLACK_BOT_TOKEN", "")
+	//os.Setenv("CHANNEL_ID", "")
+	
+	SLACK_BOT_TOKEN := os.Getenv("SLACK_BOT_TOKEN")
+	CHANNEL_ID := os.Getenv("CHANNEL_ID")
+	
+	
+	api := slack.New(SLACK_BOT_TOKEN)
+	channelArr := []string{CHANNEL_ID}
 	fileArr := []string{"docker-cheat-sheet.pdf"}
 
 	for i := 0; i < len(fileArr); i++ {
