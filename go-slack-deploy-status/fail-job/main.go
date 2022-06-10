@@ -15,13 +15,15 @@ func main() {
 	CHANNEL_ID := os.Getenv("CHANNEL_ID")
 	APP_URL := os.Getenv("APP_URL")
 	COMMIT_HASH := os.Getenv("COMMIT_HASH")
+	STATUS := "FAIL"
+	JOB_NAME := "POST_DEPLOY_RESULTS"
 
 	api := slack.New(SLACK_BOT_TOKEN)
 	preText := "*Hello! Your App Platform Deployemnt has finished!*"
 	appURL := "*APP URL:* " + APP_URL 
-	deployResult := "*" +  FAIL + "*"
+	deployResult := "*" +  STATUS + "*"
 	commitHash := "*" + COMMIT_HASH + "*"
-	jobName := "*" + POST_DEPLOY_RESULTS + "*"
+	jobName := "*" + JOB_NAME + "*"
 
 	if deployResult == "*SUCCESS*" { 
 		deployResult = deployResult + " :white_check_mark:"
