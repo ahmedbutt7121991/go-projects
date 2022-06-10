@@ -1,0 +1,10 @@
+packages:
+  - name: slack
+    actions:
+      - name: fileuplaod
+        limits:
+          timeout: 5000
+          memory: 256
+environment:
+  SLACK_BOT_TOKEN: ${SLACK_BOT_TOKEN}
+  CHANNEL_ID: ${CHANNEL_ID}
