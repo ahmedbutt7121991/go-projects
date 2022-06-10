@@ -21,7 +21,7 @@ func main() {
 	appURL := "*APP URL:* " + APP_URL 
 	deployResult := "*" +  SUCCESS + "*"
 	commitHash := "*" + COMMIT_HASH + "*"
-	jobName := "*" + POST DEPLOY RESULTS + "*"
+	jobName := "*" + POST_DEPLOY_RESULTS + "*"
 
 	if deployResult == "*SUCCESS*" { 
 		deployResult = deployResult + " :white_check_mark:"
