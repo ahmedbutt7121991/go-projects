@@ -1,7 +1,8 @@
 packages:
   - name: slack
     actions:
-      - name: fileuplaod
+      - name: fileupload
+        runtime: go:1.17
         limits:
           timeout: 5000
           memory: 256
