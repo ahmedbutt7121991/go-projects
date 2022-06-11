@@ -54,4 +54,5 @@ func main() {
 		fmt.Printf("%s\n", err)
 		return
 	}
+	fmt.Printf("STATUS: %s, URL:%s\n", STATUS, APP_URL)
 }
