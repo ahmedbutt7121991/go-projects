@@ -42,7 +42,7 @@ func main() {
 	fs := http.FileServer(http.Dir("./static"))
 	mux.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	mux.HandleFunc("/todo", todo)
+	mux.HandleFunc("/", todo)
 
 	log.Fatal(http.ListenAndServe("0.0.0.0:9090", mux))
 }
