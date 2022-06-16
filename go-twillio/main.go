@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 	"github.com/joho/godotenv"
-	"github.com/twillio/twillio-go"
-	openapi "github.com/twillio/twillio-go/rest/api/v2010"
+	"github.com/twilio/twilio-go"
+	openapi "github.com/twilio/twilio-go/rest/api/v2010"
 )
 
 var (
@@ -13,7 +13,7 @@ var (
 	authToken string
 	fromPhone string
 	toPhone string
-	client *twillio.RestClient
+	client *twilio.RestClient
 )
 
 func SendMessage(msg string) {
@@ -41,7 +41,7 @@ func init() {
 	fromPhone = os.Getenv("FROM_PHONE")
 	toPhone = os.Getenv("TO_PHONE")
 
-	client = twillio.NewRestClientWithParams(twilio.RestClientParams{
+	client = twilio.NewRestClientWithParams(twilio.RestClientParams{
 		Username: accountSid,
 		Password: authToken,
 	})
