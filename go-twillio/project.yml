@@ -1,0 +1,14 @@
+packages:
+  - name: twillio
+    actions:
+      - name: getText
+        limits:
+          timeout: 30000
+          memory: 256
+environment:
+  ACCOUNT_SID: ${ACCOUNT_SID}
+  AUTH_TOKEN: ${AUTH_TOKEN}
+  # phone numbers need to be 10 digits and start with +
+  TO_PHONE: ${TO_PHONE}
+  FROM_PHONE: ${FROM_PHONE}
+  MSG: ${MSG}
