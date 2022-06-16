@@ -51,6 +51,6 @@ func init() {
 }
 
 func main() {
-	msg := fmt.Sprintf(os.Getenv("MSG"), "AHMED")
-	SendMessage(msg)
+	//msg := fmt.Sprintf(os.Getenv("MSG"), "AHMED")
+	SendMessage("APP PlATFORM Deployment successfull\n Hurray AHMED")
 }
