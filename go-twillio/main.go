@@ -28,7 +28,7 @@ func SendMessage(msg string) {
 		fmt.Printf("error creatign and sending message: %s\n", err.Error())
 		return
 	}
-	fmt.Printf("Message SID: %s\n MESSAGE SEND SUCCESSFULLY", *response.Sid)
+	fmt.Printf("Message SID: %s\nMESSAGE SEND SUCCESSFULLY", *response.Sid)
 }
 
 func init() {
@@ -43,7 +43,7 @@ func init() {
 	authToken = os.Getenv("AUTH_TOKEN")
 	fromPhone = os.Getenv("FROM_PHONE")
 	toPhone = os.Getenv("TO_PHONE")
-
+	/*
 	env, ok := os.LookupEnv("ACCOUNT_SID")
 
 	if !ok {
@@ -75,7 +75,7 @@ func init() {
 	} else {
 		fmt.Println("TO_PHONE: ", envvvv)
 	}
-
+	*/
 	client = twilio.NewRestClientWithParams(twilio.ClientParams{
 		Username: accountSid,
 		Password: authToken,
