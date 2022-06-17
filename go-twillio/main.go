@@ -28,7 +28,7 @@ func SendMessage(msg string) {
 		fmt.Printf("error creatign and sending message: %s\n", err.Error())
 		return
 	}
-	fmt.Printf("Message SID: %s\n", *response.Sid)
+	fmt.Printf("Message SID: %s\n MESSAGE SEND SUCCESSFULLY", *response.Sid)
 }
 
 func init() {
@@ -44,6 +44,38 @@ func init() {
 	fromPhone = os.Getenv("FROM_PHONE")
 	toPhone = os.Getenv("TO_PHONE")
 
+	env, ok := os.LookupEnv("ACCOUNT_SID")
+
+	if !ok {
+		fmt.Println("the env var ACCOUNT_SID is not set")
+	} else {
+		fmt.Println("ACCOUNT_SID: ", env)
+	}
+
+	envv, ok := os.LookupEnv("AUTH_TOKEN")
+
+	if !ok {
+		fmt.Println("the env var AUTH_TOKEN is not set")
+	} else {
+		fmt.Println("AUTH_TOKEN: ", envv)
+	}
+
+	envvv, ok := os.LookupEnv("FROM_PHONE")
+
+	if !ok {
+		fmt.Println("the env var FROM_PHONE is not set")
+	} else {
+		fmt.Println("FROM_PHONE: ", envvv)
+	}
+
+	envvvv, ok := os.LookupEnv("TO_PHONE")
+
+	if !ok {
+		fmt.Println("the env var TO_PHONE is not set")
+	} else {
+		fmt.Println("TO_PHONE: ", envvvv)
+	}
+
 	client = twilio.NewRestClientWithParams(twilio.ClientParams{
 		Username: accountSid,
 		Password: authToken,
@@ -51,6 +83,6 @@ func init() {
 }
 
 func main() {
-	//msg := fmt.Sprintf(os.Getenv("MSG"), "AHMED")
-	SendMessage("APP PlATFORM Deployment successfull\n Hurray AHMED")
+	msg := fmt.Sprintf(os.Getenv("MSG"), "AHMED")
+	SendMessage(msg)
 }
