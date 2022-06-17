@@ -50,7 +50,7 @@ func init() {
 	})
 }
 
-func main() {
+func Main() {
 	msg := fmt.Sprintf(os.Getenv("MSG"), "AHMED")
 	SendMessage(msg)
 }
