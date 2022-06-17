@@ -44,5 +44,5 @@ func main() {
 
 	mux.HandleFunc("/", todo)
 
-	log.Fatal(http.ListenAndServe("0.0.0.0:9090", mux))
+	log.Fatal(http.ListenAndServe("localhost:9090", mux))
 }
