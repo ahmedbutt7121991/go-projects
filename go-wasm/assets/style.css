@@ -1,0 +1,14 @@
+body {
+    background-color: green;
+    color: maroon;
+    margin: 0 auto;
+    align-items: center;
+}
+
+button {
+    background-color: darkgoldenrod;
+    color: darkblue;
+    font-style: italic;
+    text-decoration: aqua;
+    text-align: center;
+}
